@@ -1,0 +1,22 @@
+# 
+# Options for Darwin (MAC) Operating System
+#
+# Written by Simon Lucey - Copyright 2015
+#
+
+# Set the OpenCV Path (based on where Brew puts everything)
+# Change this path depending on your version of OpenCV
+OPENCV_PATH=/usr/local/Cellar/opencv/2.4.11_1
+
+# Programs
+CC=gcc
+CXX=g++
+
+# Flags
+ARCH_FLAGS=-arch x86_64
+CFLAGS=-Wextra -Wall $(ARCH_FLAGS) -O0 -g -w # Use this if you want to be able to DEBUG
+#CFLAGS=-Wextra -Wall $(ARCH_FLAGS) -O3 # Use this is you want to run for speed...
+LDFLAGS=$(ARCH_FLAGS)
+INCLUDES=-I$(OPENCV_PATH)/include -Isrc 
+LIBRARIES=-L$(OPENCV_PATH)/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_objdetect -lopencv_calib3d -lopencv_ml -lopencv_features2d -framework Accelerate
+
