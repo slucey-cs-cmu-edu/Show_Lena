@@ -18,7 +18,6 @@ SOURCE_FILES_WITH_MAIN=\
 
 SOURCE_OBJECTS=\
         $(patsubst %.cpp,%.o,$(SOURCE_FILES))\
-	$(patsubst %.cpp,%.o,$(TORCH_FILES))
 
 ALL_OBJECTS=\
 	$(SOURCE_OBJECTS)\
